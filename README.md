@@ -8,6 +8,8 @@ Each image is carefully maintained and regularly updated to ensure compatibility
 
 Explore the available options to manage, develop, and deploy your PHP applications with ease.
 
+For more technical information, please visit our  [DeepWiki Page](https://deepwiki.com/fbraz3/php-system-docs) (AI generated).
+
 ## Who is this for?
 
 This project is designed for developers, system administrators, and DevOps engineers who need a reliable and efficient way to run PHP applications in Docker containers.
