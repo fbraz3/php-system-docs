@@ -13,7 +13,7 @@ For more technical information, please visit our  [DeepWiki Page](https://deepwi
 1. [Who is this for?](#who-is-this-for)
 2. [About the author](#about-the-author)
 3. [Available Images](#available-images)
-   - [Tools](#tools)
+   - [Tools Images](#tools-images)
    - [Backend Images](#backend-images)
    - [Web Server Images](#web-server-images)
    - [Full Stack Images](#full-stack-images)
