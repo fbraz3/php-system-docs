@@ -39,7 +39,7 @@ I believe in the power of collaboration and open-source software, and I hope thi
 
 ## Available Images
 
-### Tools
+### Tools Images
 
 A variety of tools images to help you manage your PHP applications:
 
