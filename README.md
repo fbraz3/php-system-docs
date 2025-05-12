@@ -17,8 +17,12 @@ For more technical information, please visit our  [DeepWiki Page](https://deepwi
    - [Backend Images](#backend-images)
    - [Web Server Images](#web-server-images)
    - [Full Stack Images](#full-stack-images)
-4. [Build Status](#build-status)
-5. [Donation](#donation)
+4. [Features](#features)
+   - [Cronjobs](#cronjobs)
+   - [Sending Mails](#sending-mails)
+   - [Manage PHP Directives via Environment Variables](#manage-php-directives-via-environment-variables)
+5. [Build Status](#build-status)
+6. [Donation](#donation)
 
 ## Who is this for?
 
@@ -130,6 +134,43 @@ docker run -it --rm --name=lamp -p 80:80 -v $(pwd):/workspace fbraz3/lamp:latest
 
 - [fbraz3/lemp-docker](https://github.com/fbraz3/lemp-docker)
 - [fbraz3/lamp-docker](https://github.com/fbraz3/lamp-docker)
+
+### Features
+
+#### Cronjobs
+
+Cronjobs can be configured by binding a file to `/cronfile` in the container. 
+The system will automatically install and execute the jobs.
+
+For more details, see the [php-fpm-docker documentation](https://github.com/fbraz3/php-fpm-docker#cronjobs).
+
+- Compatibility with the following images:
+  - [fbraz3/php-fpm](https://hub.docker.com/r/fbraz3/php-fpm)
+  - [fbraz3/php-nginx](https://hub.docker.com/r/fbraz3/php-nginx)
+  - [fbraz3/php-apache2](https://hub.docker.com/r/fbraz3/php-apache2)
+  - [fbraz3/lnmp](https://hub.docker.com/r/fbraz3/lnmp)
+  - [fbraz3/lamp](https://hub.docker.com/r/fbraz3/lamp)
+
+#### Sending Mails
+
+To enable email sending, this image relies on the configuration provided in the `php-base-docker` project.
+
+Follow the instructions in the [php-base-docker documentation](https://github.com/fbraz3/php-base-docker#sending-mails) to set up email functionality.
+
+- Compatibility with all images in this project.
+
+#### Manage PHP Directives via Environment Variables
+
+Some images allow you to customize PHP directives using environment variables.
+
+For detailed instructions, refer to the [php-fpm-docker documentation](https://github.com/fbraz3/php-fpm-docker#manage-php-directives-via-environment-variables).
+
+- Compatibility with the following images:
+  - [fbraz3/php-fpm](https://hub.docker.com/r/fbraz3/php-fpm)
+  - [fbraz3/php-nginx](https://hub.docker.com/r/fbraz3/php-nginx)
+  - [fbraz3/php-apache2](https://hub.docker.com/r/fbraz3/php-apache2)
+  - [fbraz3/lnmp](https://hub.docker.com/r/fbraz3/lnmp)
+  - [fbraz3/lamp](https://hub.docker.com/r/fbraz3/lamp)
 
 ### Build Status
 
