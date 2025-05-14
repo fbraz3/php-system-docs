@@ -32,7 +32,7 @@ Whether you're building a new application, maintaining an existing one, or looki
 
 ## About the author
 
-My name is Felipe Braz, a software engineer, system administrator and devops engineer with a passion for open-source software and Docker.
+My name is Felipe Braz, I am a DevOps engineer and System Administrator with a passion for open-source software and Docker.
 
 Although my career has taken me in directions away from PHP, I still hold a deep passion for the language that introduced me to the world of technology and software development.
 
@@ -47,9 +47,9 @@ I believe in the power of collaboration and open-source software, and I hope thi
 
 A variety of tools images to help you manage your PHP applications:
 
-- [PHP CLI](https://hub.docker.com/r/fbraz3/php-cli): Command line interface for PHP applications, with [phalcon framework](https://phalcon.io/) support.
+- [PHP CLI](https://hub.docker.com/r/fbraz3/php-cli): Command line interface for PHP applications, with [Phalcon framework](https://phalcon.io/) support.
 - [PHP Composer](https://hub.docker.com/r/fbraz3/php-composer): Command line for [Composer package manager](https://getcomposer.org/).
-- [WP-CLI](https://hub.docker.com/r/fbraz3/wp-cli): [Command line](https://developer.wordpress.org/cli/commands/cli/) for managing WordPress installations.
+- [WP-CLI](https://hub.docker.com/r/fbraz3/wp-cli): Manage WordPress installations with this [Command line Tool](https://developer.wordpress.org/cli/commands/cli/).
 - [Symfony CLI](https://hub.docker.com/r/fbraz3/symfony-cli): Command line for [Symfony framework](https://symfony.com/doc/current/setup.html).
 
 #### Usage
