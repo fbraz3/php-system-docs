@@ -79,15 +79,56 @@ Images focusing on PHP server backend for easy integration with most commons web
 
 #### Usage
 
+**Step 1:** Run PHP-FPM image and expose port 1780/TCP
 ```bash
 # Run a PHP-FPM server, php-fpm socket will listening on port 1780
-docker run -it --rm --name=php-fpm -v $(pwd):/workspace fbraz3/php-fpm:latest php-fpm
-
-# In order to run a PHP-FPM server, you need to bind it to a web server, such as Nginx or Apache2.
-# For example, to run the NGINX server official image and bind to the PHP-FPM server:
-docker run -it --rm --name=nginx -p 80:80 -v $(pwd):/workspace nginx:latest
-# Note: You need to manually configure the NGINX server to use the PHP-FPM server as a backend.
+docker run -it --rm --name=php-fpm -p 1780:1780 -v $(pwd):/app/public fbraz3/php-fpm:latest php-fpm
 ```
+
+**Step 2:** Configure your webserver to handle fastcgi from 1780 port
+
+- Example for NGINX
+```
+server {
+    listen 80 default_server;
+
+    root /app/public;
+    index index.php index.html index.htm;
+
+    location ~ \.php$ {
+        fastcgi_pass 127.0.0.1:1780;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param SCRIPT_NAME $fastcgi_script_name;
+        include /etc/nginx/fastcgi_params;
+        fastcgi_read_timeout 300;
+    }
+}
+```
+
+- Example for Apache2 / HTTPD
+```
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /app/public
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+    DirectoryIndex index.php index.html index.htm
+
+    <FilesMatch \.php$>
+        SetHandler "proxy:fcgi://127.0.0.1:1780"
+    </FilesMatch>
+
+    <Directory /app/public>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
+
+ 
 
 #### Source Code
 [fbraz3/php-fpm-docker](https://github.com/fbraz3/php-fpm-docker)
