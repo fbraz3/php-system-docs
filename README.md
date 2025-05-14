@@ -144,10 +144,10 @@ Images providing PHP and built-in web server for easy deployment:
 
 ```bash
 # Run a PHP-FPM server with Apache2, php-fpm socket will listening on port 80
-docker run -it --rm --name=php-apache2 -p 80:80 -v $(pwd):/workspace fbraz3/php-apache2:latest php-fpm
+docker run -it --rm --name=php-apache2 -p 80:80 -v $(pwd):/app/public fbraz3/php-apache2:latest php-fpm
 
 # Run a PHP-FPM server with Nginx, php-fpm socket will listening on port 80
-docker run -it --rm --name=php-nginx -p 80:80 -v $(pwd):/workspace fbraz3/php-nginx:latest php-fpm
+docker run -it --rm --name=php-nginx -p 80:80 -v $(pwd):/app/public fbraz3/php-nginx:latest php-fpm
 ```
 
 #### Source Code
@@ -165,10 +165,10 @@ Images providing a complete stack for your development environment:
 
 ```bash
 # Run a LEMP server, php-fpm socket will listening on port 80
-docker run -it --rm --name=lnmp -p 80:80 -v $(pwd):/workspace fbraz3/lnmp:latest php-fpm
+docker run -it --rm --name=lnmp -p 80:80 -v $(pwd):/app/public fbraz3/lnmp:latest php-fpm
 
 # Run a LAMP server, php-fpm socket will listening on port 80
-docker run -it --rm --name=lamp -p 80:80 -v $(pwd):/workspace fbraz3/lamp:latest php-fpm
+docker run -it --rm --name=lamp -p 80:80 -v $(pwd):/app/public fbraz3/lamp:latest php-fpm
 ```
 
 #### Source Code
