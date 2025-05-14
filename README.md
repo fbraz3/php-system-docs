@@ -88,7 +88,7 @@ docker run -it --rm --name=php-fpm -p 1780:1780 -v $(pwd):/app/public fbraz3/php
 **Step 2:** Configure your webserver to handle fastcgi from 1780 port
 
 - Example for NGINX
-```
+```nginxconf
 server {
     listen 80 default_server;
 
@@ -106,7 +106,7 @@ server {
 ```
 
 - Example for Apache2 / HTTPD
-```
+```apacheconf
 <VirtualHost *:80>
     ServerAdmin webmaster@localhost
     DocumentRoot /app/public
