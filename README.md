@@ -68,6 +68,16 @@ docker run -it --rm -v $(pwd):/workspace fbraz3/wp-cli:latest core download --pa
 docker run -it --rm -v $(pwd):/workspace fbraz3/symfony-cli:latest new my_project_name
 ```
 
+You may want to add these executable aliases to your `.bashrc` or `.zshrc` for convenience.
+
+```bash
+PHP_VERSION=8.4 # Replace with your preferred PHP version
+php() { docker run -v "$(pwd):/workspace" --rm fbraz3/php-cli:$PHP_VERSION "$@"; }
+composer() { docker run -v "$(pwd):/workspace" --rm fbraz3/php-composer:$PHP_VERSION "$@"; }
+wp() { docker run -v "$(pwd):/workspace" --rm fbraz3/wp-cli:$PHP_VERSION "$@"; }
+symfony() { docker run -v "$(pwd):/workspace" --rm fbraz3/symfony-cli:$PHP_VERSION "$@"; }
+```
+
 #### Source Code
 [fbraz3/php-base-docker](https://github.com/fbraz3/php-base-docker)
 
