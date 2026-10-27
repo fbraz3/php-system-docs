@@ -43,6 +43,11 @@ I believe in the power of collaboration and open-source software, and I hope thi
 
 ## Available Images
 
+### Supported PHP Versions
+
+- **Vanilla Flavors**: `8.5` (latest), `8.4`, `8.3`, `8.2`, `8.1`, `8.0`, `7.4`, `7.3`, `7.2`, `7.1`, `7.0`, `5.6`
+- **Phalcon Framework Flavors**: `8.4` (latest), `8.3`, `8.2`, `8.1`, `8.0`, `7.4`, `7.3`, `7.2`, `7.1`, `7.0`, `5.6`
+
 ### Tools Images
 
 A variety of tools images to help you manage your PHP applications:
@@ -71,7 +76,7 @@ docker run -it --rm -v $(pwd):/workspace fbraz3/symfony-cli:latest new my_projec
 You may want to add these executable aliases to your `.bashrc` or `.zshrc` for convenience.
 
 ```bash
-PHP_VERSION=8.4 # Replace with your preferred PHP version
+PHP_VERSION=8.5 # Replace with your preferred PHP version
 php() { docker run -v "$(pwd):/workspace" --rm fbraz3/php-cli:$PHP_VERSION "$@"; }
 composer() { docker run -v "$(pwd):/workspace" --rm fbraz3/php-composer:$PHP_VERSION "$@"; }
 wp() { docker run -v "$(pwd):/workspace" --rm fbraz3/wp-cli:$PHP_VERSION "$@"; }
